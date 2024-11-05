@@ -43,3 +43,9 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository_owner }}/rust-web-server:latest
             ghcr.io/${{ github.repository_owner }}/rust-web-server:${{ env.commit_sha }}
+      
+      - name: Deploy to Kubernetes
+        run: |
+          sed -i "s|<commit-sha>|${{ github.sha }}|g" deployment.yaml  # Use github.sha directly
+          kubectl apply -f deployment.yaml
+          
