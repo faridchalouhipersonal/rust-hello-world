@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: rust-web-server
-        image: 499974397304.dkr.ecr.eu-west-1.amazonaws.com/temp-to-be-deleted
+        image: ghcr.io/faridchalouhipersonal/rust-web-server:<commit-sha>
         ports:
         - containerPort: 8080
 ---
