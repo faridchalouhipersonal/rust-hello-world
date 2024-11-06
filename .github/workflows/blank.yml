@@ -47,5 +47,5 @@ jobs:
       - name: Deploy to Kubernetes
         run: |
           sed -i "s|<commit-sha>|${{ github.sha }}|g" k8s-manifest.yaml  # Use github.sha directly
-          kubectl apply -f k8s-manifest.yaml
+#         kubectl apply -f k8s-manifest.yaml I would activate this line after configuring the connection to my kube cluster
           
