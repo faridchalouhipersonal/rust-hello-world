@@ -20,7 +20,10 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-
+      
+      - name: Build Application
+        run: cargo build --release
+        
       - name: Run Unit Tests
         run: cargo test --release
 
